@@ -53,3 +53,12 @@ break
 else    
 echo -n "?"
 fi
+done
+
+rsync -avz --delete "$VMDIR" "$BACKUPDIR"
+
+vmware-cmd "$VMXPATH" start
+
+echo "startup."
+
+exit 0
